@@ -1,26 +1,25 @@
-# PROY-2026-GRUPOX
+# PROY-2026-GRUPO4
 
-Repositorio del grupo X para el proyecto del ramo *Proyecto Inicial (IWG400)* – 2026.
+Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* – 2026.
 
 ## 👥 Integrantes del grupo
 
 | Nombre y Apellido | Usuario GitHub | Correo USM               | Rol USM      |
 | ----------------- | -------------- | ------------------------ | ------------ |
-| Nombre1 Apellido1 | @usuario1      | nombre1.apellido1@usm.cl | 200000000000 |
-| Nombre2 Apellido2 | @usuario2      | nombre2.apellido2@usm.cl | 200000000000 |
-| Nombre3 Apellido3 | @usuario3      | nombre3.apellido3@usm.cl | 200000000000 |
-| Nombre4 Apellido4 | @usuario4      | nombre4.apellido4@usm.cl | 200000000000 |
+|Catalina Valenzuela| @tupicat       | cvalenzuelare@usm.cl     | 202630012-9  |
+|Rocio Lopez        | @neskuai       | rlopezvi@usm.cl          | 202630030-7  |
+
 
 ## 📝 Descripción breve del proyecto
 
-> *Aquí va una descripción general del proyecto, incluyendo su propósito, contexto dentro del curso y motivación.*
+> Jarbus 
 
 ---
 
 ## 🎯 Objetivos
 
 - Objetivo general:
-  - *Describir el objetivo principal del proyecto.*
+  - Informar a estudiantes, trabajadores y adultos mayores sobre el es
 - Objetivos específicos:
   - *Listar objetivos concretos que permitirán alcanzar el objetivo general.*
 
@@ -28,18 +27,19 @@ Repositorio del grupo X para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 🧩 Alcance del proyecto
 
-> *Definir qué aspectos cubre el proyecto y qué queda fuera del alcance (limitaciones).*
+> Informar a la comunidad sobre la cantidad de personas dentro de una micro en tiempo real.
+> Limitaciones: Alcance comunitario.
 
 ---
 
 ## 🛠️ Tecnologías y herramientas utilizadas
 
 - Lenguaje(s) de programación:
-  - Ej: Python, JavaScript, C++
+  - Python
 - Microcontroladores
-  - Arduino UNO Q, ESP32
+  - Arduino UNO
 - Sensores
-
+  - Wi-fi sniffing 
 ---
 
 ## 🗂️ Estructura del repositorio
