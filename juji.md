@@ -12,23 +12,29 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📝 Descripción breve del proyecto
 
-> Jarbus 
+> **"Jarbus"** es un aplicacion movil con un sistema diseñado para el monitoreo de aforo en tiempo real en transportes publicos, en este caso, micros o buses. Utilizando un Arduino Uno Q, con Linux integrado, puede captar señales Wi-Fi (direcciones MAC) que emiten dispositivos de los usuarios. 
 
 ---
 
 ## 🎯 Objetivos
 
 - Objetivo general:
-  - Informar a estudiantes, trabajadores y adultos mayores sobre el es
-- Objetivos específicos:
-  - *Listar objetivos concretos que permitirán alcanzar el objetivo general.*
 
+  - Optimizar la toma de decisiones para los usuarios dle transporte.
+     
+- Objetivos específicos:
+
+  - Configurar Arduino entorno Linux
+  - Establecer umbrales para delimitar el area de conteo   
+  - Diseñar una plataforma de visualizacion (Aplicacion movil)
+  - Validar el prototipo en un entorno real
+    
 ---
 
 ## 🧩 Alcance del proyecto
 
-> Informar a la comunidad sobre la cantidad de personas dentro de una micro en tiempo real.
-> Limitaciones: Alcance comunitario.
+>  Entregar una herramienta a la comunidad para disminuir la aglomeracion en horas puntas y paraderos.
+>  Limitaciones: Distribucion de esta herramienta como difundirlo para todo publico, el error experimental.
 
 ---
 
@@ -39,7 +45,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 - Microcontroladores
   - Arduino UNO
 - Sensores
-  - Wi-fi sniffing 
+  - Wi-fi sniffing (Integrado en Arduino U no Q)
 ---
 
 ## 🗂️ Estructura del repositorio
@@ -74,7 +80,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📅 Cronograma de trabajo
 
-[Carta Gantt](https://google.com)
+[Carta Gantt](https://usmcl-my.sharepoint.com/:x:/g/personal/cvalenzuelare_usm_cl/IQDzA8dsifGCTqFkziw_mTvIAR-G9Q0wZ-xvGrp9QnSTQaU?e=GH2rFT)
 
 ---
 
@@ -86,4 +92,10 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📌 Notas adicionales
 
-> *Espacio para dejar cualquier comentario útil, como pendientes, acuerdos del grupo, consideraciones especiales, etc.*
+> Buscar el tema del wifi sniffing, q tiene q estar en ingles jaja.
+para lo de arriba, cuando se busque algo que si sirve, anotar el link en bibliografias, siosisiosiosiosios
+> buscar el tema de librerias scapy o sniff(o algo asi)
+> Empezar con el codigo
+> comer queque 🤤 atte.cata NECESARIO !!!!!!!!!!
+> 
+> 
