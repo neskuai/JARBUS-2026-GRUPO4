@@ -84,7 +84,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📚 Bibliografía
 
-[Bibliografía]([https://google.com](https://usmcl-my.sharepoint.com/:w:/g/personal/cvalenzuelare_usm_cl/IQDYYMyArTveQaWduHugnukkAVsH1VWSEH6rNh9kpRsD15A?e=cc4g5l))
+[Bibliografía](https://usmcl-my.sharepoint.com/:w:/g/personal/cvalenzuelare_usm_cl/IQDYYMyArTveQaWduHugnukkAVsH1VWSEH6rNh9kpRsD15A?e=cc4g5l)
 
 ---
 
