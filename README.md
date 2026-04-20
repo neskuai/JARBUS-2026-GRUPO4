@@ -12,7 +12,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📝 Descripción breve del proyecto
 
-> **"Jarbus"** es un aplicacion movil con un sistema diseñado para el monitoreo de aforo en tiempo real en transportes publicos, en este caso, micros o buses. Utilizando un Arduino Uno Q, con Linux integrado, puede captar señales Wi-Fi (direcciones MAC) que emiten dispositivos de los usuarios. 
+> **"Jarbus"** es un aplicación móvil con un sistema diseñado para el monitoreo de aforo en tiempo real en transportes públicos, en este caso, micros o buses. Utilizando un Arduino Uno Q, con Linux integrado, puede captar señales Wi-Fi (direcciones MAC) que emiten dispositivos de los usuarios. 
 
 ---
 
@@ -26,15 +26,15 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
   - Configurar Arduino entorno Linux
   - Establecer umbrales para delimitar el area de conteo   
-  - Diseñar una plataforma de visualizacion (Aplicacion movil)
+  - Diseñar una plataforma de visualizacion (Aplicación móvil)
   - Validar el prototipo en un entorno real
     
 ---
 
 ## 🧩 Alcance del proyecto
 
->  Entregar una herramienta a la comunidad para disminuir la aglomeracion en horas puntas y paraderos.
->  Limitaciones: Distribucion de esta herramienta como difundirlo para todo publico, el error experimental.
+>  Entregar una herramienta a la comunidad para disminuir la aglomeración en horas puntas y paraderos.
+>  Limitaciones: Distribución de esta herramienta como difundirlo para todo publico, el error experimental.
 
 ---
 
@@ -43,9 +43,9 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 - Lenguaje(s) de programación:
   - Python
 - Microcontroladores
-  - Arduino UNO
+  - Arduino UNO Q
 - Sensores
-  - Wi-fi sniffing (Integrado en Arduino U no Q)
+  - Wi-fi sniffing (Integrado en Arduino Uno Q)
 ---
 
 ## 🗂️ Estructura del repositorio
@@ -74,8 +74,6 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 ## 📐 Diseño del Sistema
 ![Diagrama de Conexiones](./assets/diagrama_conexiones.png)
 
-*Explicacion grafica de como es la conexion entre el microcontrolador y los sensores*
-
 ---
 
 ## 📅 Cronograma de trabajo
@@ -86,16 +84,16 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📚 Bibliografía
 
-[Enlace](https://google.com)
+[Bibliografía]([https://google.com](https://usmcl-my.sharepoint.com/:w:/g/personal/cvalenzuelare_usm_cl/IQDYYMyArTveQaWduHugnukkAVsH1VWSEH6rNh9kpRsD15A?e=cc4g5l))
 
 ---
 
 ## 📌 Notas adicionales
 
-> Buscar el tema del wifi sniffing, q tiene q estar en ingles jaja.
-para lo de arriba, cuando se busque algo que si sirve, anotar el link en bibliografias, siosisiosiosiosios
-> buscar el tema de librerias scapy o sniff(o algo asi)
-> Empezar con el codigo
-> comer queque 🤤 atte.cata NECESARIO !!!!!!!!!!
-> 
-> 
+> Notas para 20-04 sino se me olvida
+>  Flashear debian en Arduino, o instalar scapy, agregar en arduino applab
+  >si no esta, revisar en discos, reestablecer disco de la SD y poner el .img del balenaEtcher. consultar pq no tengo el .img
+> codigo para sniffing
+> Empezar muestreo 
+> editar prueba: nano test_sniff.py
+> ejecutarlo: sudo python3 test_sniff.py
