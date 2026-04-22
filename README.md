@@ -65,14 +65,11 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 ## 🚀 Instrucciones de Instalacion y Uso
 
 
-1. **Clonar el repositorio:** `git clone ...`
-2. **Dependencias:** Listar qué librerías necesitan (ej: `pip install -r requirements.txt` o librerías de Arduino).
-3. **Ejecución:** Cómo se corre el código principal.
-
----
-
-## 📐 Diseño del Sistema
-![Diagrama de Conexiones](./assets/diagrama_conexiones.png)
+1. Tener un Arduino Uno Q: Será nuestro "cerebro"
+2. Descargar Arduino App Lab:
+3. Descargar carpeta "Scapy": Con esta librería, usando el lenguaje "python", testeamos a través de la computadora nuestro código que detecta las direcciones MAC.
+4. 
+5. 
 
 ---
 
@@ -90,10 +87,11 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📌 Notas adicionales
 
-> Notas para 20-04 sino se me olvida
->  Flashear debian en Arduino, o instalar scapy, agregar en arduino applab
-  >si no esta, revisar en discos, reestablecer disco de la SD y poner el .img del balenaEtcher. consultar pq no tengo el .img
-> codigo para sniffing
-> Empezar muestreo 
-> editar prueba: nano test_sniff.py
-> ejecutarlo: sudo python3 test_sniff.py
+> Hacer:
+> investigar si hay mas carpetas tippo "scapy" pero reducida para el cc que necesitamos (si)
+> ver desde el otro angulo pero con c++, ns q dijo el lberner, me bugee, pero es algo tipo asi.
+> if (proyecto == 0){
+    nota = 100;
+> }else{
+    congelar ++;
+> }
