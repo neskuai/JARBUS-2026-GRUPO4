@@ -9,7 +9,6 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 |Catalina Valenzuela| @tupicat       | cvalenzuelare@usm.cl     | 202630012-9  |
 |Rocio Lopez        | @neskuai       | rlopezvi@usm.cl          | 202630030-7  |
 
-
 ## 📝 Descripción breve del proyecto
 
 > **"Jarbus"** es un aplicación móvil con un sistema diseñado para el monitoreo de aforo en tiempo real en transportes públicos, en este caso, micros o buses. Utilizando un Arduino Uno Q, con Linux integrado, puede captar señales Wi-Fi (direcciones MAC) que emiten dispositivos de los usuarios. 
@@ -40,7 +39,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 🛠️ Tecnologías y herramientas utilizadas
 
-- Lenguaje(s) de programación:
+- Lenguaje de programación:
   - Python
 - Microcontroladores
   - Arduino UNO Q
@@ -55,22 +54,52 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 │
 ├── docs/               # Documentación general y reportes
 ├── src/                # Código fuente del proyecto
-├── tests/              # Casos de prueba
-├── assets/             # Imágenes, diagramas, etc.
 └── README.md           # Este archivo
 ```
 
 ---
 
 ## 🚀 Instrucciones de Instalacion y Uso
+**Previamente, el Arduino Uno Q debe estar conectado con la computadora. Existen varias formas de conectarlo, sin embargo, en este caso usaremos un cable USB-C y *ADB tools*. Para más información haga click [aquí](https://docs.arduino.cc/tutorials/uno-q/debian-guide/#accessing-the-board-shell).**
 
+1. Instalar herramienta ADB (Android Debug Bridge): Nos permitirá establecer comunicación directa  entre tu computador y el Arduino UNO Q.
 
-1. Tener un Arduino Uno Q: Será nuestro "cerebro"
-2. Descargar Arduino App Lab:
-3. Descargar carpeta "Scapy": Con esta librería, usando el lenguaje "python", testeamos a través de la computadora nuestro código que detecta las direcciones MAC.
-4. 
-5. 
+  Para usuarios con Linux: 
+  
+* Abrir terminal e ingresar los siguientes comandos
+```
+sudo apt install adb
+```
+* Una vez instalado, comprobamos que el arduino ha sido detectado.
+```
+adb devices
+```
+Si aparece un resultado como el siguiente, entonces ya estamos listos para ingresar! 
+```
+List of devices attached
+123456789	device
+```
+* Ejecuta 
+```
+adb shell
+```
+para acceder al entorno de la consola de la placa.
 
+*(Si ninguno de los pasos anteriores funciona, haz click [aquí](https://docs.arduino.cc/tutorials/uno-q/adb/). Si aún asi no funciona, te invito a probar con otros métodos.)*
+
+---
+
+2. Instalar biblioteca "Scapy" y : Esta Biblioteca será escencial para facilitarnos el trayecto
+```
+pip install scapy
+pip show scapy (para ver si está scapy realmente)
+```
+3. Creación de codigo
+  - Detectando macs (iw)
+  - Contabilizando macs
+  - loop de contabilización y transmicion de datos contable en una variable
+  - mostrar en pantalla* 
+  - sitio web
 ---
 
 ## 📅 Cronograma de trabajo
@@ -87,11 +116,3 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 📌 Notas adicionales
 
-> Hacer:
-> investigar si hay mas carpetas tippo "scapy" pero reducida para el cc que necesitamos (si)
-> ver desde el otro angulo pero con c++, ns q dijo el lberner, me bugee, pero es algo tipo asi.
-> if (proyecto == 0){
-    nota = 100;
-> }else{
-    congelar ++;
-> }
