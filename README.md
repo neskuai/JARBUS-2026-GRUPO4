@@ -7,33 +7,42 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 | Nombre y Apellido | Usuario GitHub | Correo USM               | Rol USM      |
 | ----------------- | -------------- | ------------------------ | ------------ |
 |Catalina Valenzuela| @tupicat       | cvalenzuelare@usm.cl     | 202630012-9  |
-|Rocio Lopez        | @neskuai       | rlopezvi@usm.cl          | 202630030-7  |
+|Rocío Lopez        | @neskuai       | rlopezvi@usm.cl          | 202630030-7  |
 
 ## 📝 Descripción breve del proyecto
 
-> **"Jarbus"** es un aplicación móvil con un sistema diseñado para el monitoreo de aforo en tiempo real en transportes públicos, en este caso, micros o buses. Utilizando un Arduino Uno Q, con Linux integrado, puede captar señales Wi-Fi (direcciones MAC) que emiten dispositivos de los usuarios. 
-
+> **Jarbus** es un sistema diseñado para el monitoreo de aforo en tiempo real en el transporte público. Utilizando un Arduino Uno Q con Linux integrado, captura señales Wi-Fi (direcciones MAC) de los dispositivos cercanos; estos datos son procesados y visualizados a través de una interfaz web (HTML/CSS) accesible para los usuarios.
 ---
 
 ## 🎯 Objetivos
 
 - Objetivo general:
 
-  - Optimizar la toma de decisiones para los usuarios dle transporte.
+  - Optimizar la toma de decisiones para los usuarios del transporte.
      
 - Objetivos específicos:
 
   - Configurar Arduino entorno Linux
-  - Establecer umbrales para delimitar el area de conteo   
-  - Diseñar una plataforma de visualizacion (Aplicación móvil)
+  - Establecer umbrales para delimitar el área de conteo   
+  - Diseñar una plataforma de visualización de datos a tiempo real (Sitio web)
   - Validar el prototipo en un entorno real
     
 ---
 
 ## 🧩 Alcance del proyecto
 
->  Entregar una herramienta a la comunidad para disminuir la aglomeración en horas puntas y paraderos.
->  Limitaciones: Distribución de esta herramienta como difundirlo para todo publico, el error experimental.
+> Entregar una herramienta a la comunidad para optimizar la toma de decisiones y disminuir las aglomeraciones en horas punta.
+>
+> Limitaciones:
+>* Escalabilidad y Difusión: El alcance actual se limita a un prototipo funcional. Requiere una red de distribución de datos y una estrategia de difusión para que el público general adopte la plataforma.
+>
+>* Margen de Error Experimental:
+>
+>   - Multiplicidad de dispositivos: El sistema contabiliza señales Wi-Fi; por lo tanto, un único usuario con múltiples dispositivos activos (ej. smartphone, tablet y laptop) podría ser contabilizado como varias personas.
+>
+>   - Aleatorización de MAC: Los dispositivos modernos utilizan direcciones MAC temporales o aleatorias por privacidad, lo que puede afectar la precisión del conteo histórico.
+>
+>   - Señales externas: La captación de dispositivos que no están dentro del bus (personas en paraderos o vehículos cercanos) puede generar "falsos positivos" en el aforo.
 
 ---
 
@@ -41,10 +50,11 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 - Lenguaje de programación:
   - Python
+  - HTML (para el sitio web)
 - Microcontroladores
   - Arduino UNO Q
 - Sensores
-  - Wi-fi sniffing (Integrado en Arduino Uno Q)
+  - Wi-Fi sniffing (Integrado en Arduino Uno Q)
 ---
 
 ## 🗂️ Estructura del repositorio
@@ -59,10 +69,10 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ---
 
-## 🚀 Instrucciones de Instalacion y Uso
+## 🚀 Instrucciones de Instalación y Uso
 **Previamente, el Arduino Uno Q debe estar conectado con la computadora. Existen varias formas de conectarlo, sin embargo, en este caso usaremos un cable USB-C y *ADB tools*. Para más información haga click [aquí](https://docs.arduino.cc/tutorials/uno-q/debian-guide/#accessing-the-board-shell).**
 
-1. Instalar herramienta ADB (Android Debug Bridge): Nos permitirá establecer comunicación directa  entre tu computador y el Arduino UNO Q.
+**1. Instalar herramienta ADB (Android Debug Bridge):** Nos permitirá establecer comunicación directa  entre tu computador y el Arduino UNO Q.
 
   Para usuarios con Linux: 
   
@@ -74,7 +84,7 @@ sudo apt install adb
 ```
 adb devices
 ```
-Si aparece un resultado como el siguiente, entonces ya estamos listos para ingresar! 
+Si aparece un resultado como el siguiente, entonces ya estamos listos para ingresar. 
 ```
 List of devices attached
 123456789	device
@@ -85,19 +95,54 @@ adb shell
 ```
 para acceder al entorno de la consola de la placa.
 
-*(Si ninguno de los pasos anteriores funciona, haz click [aquí](https://docs.arduino.cc/tutorials/uno-q/adb/). Si aún asi no funciona, te invito a probar con otros métodos.)*
+*(Si ninguno de los pasos anteriores funciona, haz click [aquí]([https://docs.arduino.cc/tutorials/uno-q/adb/](https://www.xda-developers.com/install-adb-windows-macos-linux/)). Si aún asi no funciona, te invito a probar con otros métodos.)*
 
 ---
+**2. Instalar biblioteca "Scapy":** Ya ingresado a la terminal del Arduino, debería aparecer algo tal que así
+```
+ arduino@uno-q:~$ 
+```
+* Primero, actualizamos el sistema para asegurar la compatibilidad:
+```
+sudo apt update && sudo apt upgrade -y
+```
+(el *-y* sirve para aceptar todas las preguntas de confirmación)
+* Ahora instalaremos scapy. Esta biblioteca será esencial para facilitarnos el trabajo de largas lineas de código.
+```
+sudo apt install python3-scapy -y
+```
+Para verificar la instalación, puedes ejecutar:
+```
+sudo scapy
+```
+* Si al probar el comando entras al modo interactivo de Scapy (verás un símbolo como >>>), simplemente escribe **exit** o presiona **Ctrl + D** para regresar a la terminal del Arduino.
 
-2. Instalar biblioteca "Scapy" y : Esta Biblioteca será escencial para facilitarnos el trayecto
+*(Si ninguno de los pasos anteriores funciona, le invito a probar directamente desde el manual, haciendo clíck [aquí](https://www.kali.org/tools/scapy/))*
+
+---
+3. **Instalar pandas**: Nos ayudará a que la información con respecto a todo sea más "limpia" o visiblemente comprensiva (en desarrollo):
 ```
-pip install scapy
-pip show scapy (para ver si está scapy realmente)
+sudo apt install python3-pandas
 ```
-3. Creación de codigo
-  - Detectando macs (iw)
+---
+4. Creación de código: Para crear y editar el archivo donde estará nuestro código, utilizaremos el editor **nano**. En la misma terminal, ejecuta el siguiente comando.
+```
+nano nombredelarchivo.py
+```
+(se da a entender que "nombre del archivo" es el nombre que le darás al archivo, mientras que ".py" es el formato del archivo que, en este caso, es *py*thon.)
+* Ya dentro de nano, copia el siguiente código.
+```
+codigo en mantenimiento la cuestion aaa
+```
+**3. Entrar a modo monitor:** Entrar a modo monitor: Permite que la antena del Arduino actúe como un radar, capturando las direcciones MAC de dispositivos cercanos aunque no se conecten a la red.
+* 
+  - entrar modo monitor,
+sudo ip link set wlan0 down: se apaga
+sudo iw dev wlan0 set type monitor:inicia
+sudo ip link set wlan0 up:prende
+
   - Contabilizando macs
-  - loop de contabilización y transmicion de datos contable en una variable
+  - loop de contabilización y transmición de datos contable en una variable
   - mostrar en pantalla* 
   - sitio web
 ---
@@ -115,4 +160,6 @@ pip show scapy (para ver si está scapy realmente)
 ---
 
 ## 📌 Notas adicionales
+flash, light...falsh, light
 
+pandas
