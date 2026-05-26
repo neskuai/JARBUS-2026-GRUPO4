@@ -2,6 +2,12 @@
 
 Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* – 2026.
 
+## 🗂️ Estructura del repositorio
+
+```
+/PROY-2026-GRUPOX
+│
+```
 ## 👥 Integrantes del grupo
 
 | Nombre y Apellido | Usuario GitHub | Correo USM               | Rol USM      |
@@ -57,15 +63,6 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
   - Wi-Fi sniffing (Integrado en Arduino Uno Q)
 ---
 
-## 🗂️ Estructura del repositorio
-
-```
-/PROY-2026-GRUPOX
-│
-├── docs/               # Documentación general y reportes
-├── src/                # Código fuente del proyecto
-└── README.md           # Este archivo
-```
 
 ---
 
@@ -120,11 +117,7 @@ sudo scapy
 *(Si ninguno de los pasos anteriores funciona, le invito a probar directamente desde el manual, haciendo clíck [aquí](https://www.kali.org/tools/scapy/))*
 
 ---
-3. **Instalar pandas**: Nos ayudará a que la información con respecto a todo sea más "limpia" o visiblemente comprensiva (en desarrollo):
-```
-sudo apt install python3-pandas
-```
----
+
 4. Creación de código: Para crear y editar el archivo donde estará nuestro código, utilizaremos el editor **nano**. En la misma terminal, ejecuta el siguiente comando.
 ```
 nano nombredelarchivo.py
@@ -160,6 +153,16 @@ sudo ip link set wlan0 up:prende
 ---
 
 ## 📌 Notas adicionales
-flash, light...falsh, light
 
-pandas
+26-mayo
+Avance en codigo
+Por hacer:
+  Rocio --> Documentar pasos de creacion de pagina web (Fecha limte: jueves 28-Mayo)
+        --> Ultimos detalles de la web, muestreo (30 mayo)
+        --> Conectar Arduino (por ver)
+        -->Documentar links en Bbliografía (28-Mayo)
+  Cata --> Justificación de código ()
+       --> Documentar pasos código y finales (Jueves 28)
+       --> Conectar arduino y pagina
+       -->Testear en sala (1 semana de junio)
+        
