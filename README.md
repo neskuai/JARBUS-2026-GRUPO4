@@ -19,8 +19,8 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* 鈥
 
 > **Jarbus** es un sistema dise帽ado para el monitoreo de aforo en tiempo real en el transporte p煤blico. Utilizando un Arduino Uno Q con Linux integrado, captura se帽ales Wi-Fi (direcciones MAC) de los dispositivos cercanos; estos datos son procesados y visualizados a trav茅s de una interfaz web (HTML/CSS) accesible para los usuarios.
 ---
-
-## 馃幆 Objetivos
+<details>
+ <summary><b>馃幆 Objetivos</b></summary>
 
 - Objetivo general:
 
@@ -32,7 +32,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* 鈥
   - Establecer umbrales para delimitar el 谩rea de conteo   
   - Dise帽ar una plataforma de visualizaci贸n de datos a tiempo real (Sitio web)
   - Validar el prototipo en un entorno real
-    
+    </details>
 ---
 
 ## 馃З Alcance del proyecto
@@ -56,19 +56,18 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* 鈥
 
 - Lenguaje de programaci贸n:
   - Python
-  - HTML (para el sitio web)
 - Microcontroladores
   - Arduino UNO Q
 - Sensores
   - Wi-Fi sniffing (Integrado en Arduino Uno Q)
+  - 
 ---
+## 馃殌Pasos de instalaci贸n y uso 
 
-
----
-
-## 馃殌 Instrucciones de Instalaci贸n y Uso
 **Previamente, el Arduino Uno Q debe estar conectado con la computadora. Existen varias formas de conectarlo, sin embargo, en este caso usaremos un cable USB-C y *ADB tools*. Para m谩s informaci贸n haga click [aqu铆](https://docs.arduino.cc/tutorials/uno-q/debian-guide/#accessing-the-board-shell).**
 
+<details>
+  <summary><b> Backend </b></summary>
 **1. Instalar herramienta ADB (Android Debug Bridge):** Nos permitir谩 establecer comunicaci贸n directa  entre tu computador y el Arduino UNO Q.
 
   Para usuarios con Linux: 
@@ -138,6 +137,13 @@ sudo ip link set wlan0 up:prende
   - loop de contabilizaci贸n y transmici贸n de datos contable en una variable
   - mostrar en pantalla* 
   - sitio web
+</details>
+
+<details>
+  <summary><b>Frontend </b></summary>
+ 
+</details>  
+
 ---
 
 ## 馃搮 Cronograma de trabajo
@@ -151,18 +157,7 @@ sudo ip link set wlan0 up:prende
 [Bibliograf铆a](https://usmcl-my.sharepoint.com/:w:/g/personal/cvalenzuelare_usm_cl/IQDYYMyArTveQaWduHugnukkAVsH1VWSEH6rNh9kpRsD15A?e=cc4g5l)
 
 ---
-
 ## 馃搶 Notas adicionales
-
-26-mayo
-Avance en codigo
-Por hacer:
-  Rocio --> Documentar pasos de creacion de pagina web (Fecha limte: jueves 28-Mayo)
-        --> Ultimos detalles de la web, muestreo (30 mayo)
-        --> Conectar Arduino (por ver)
-        -->Documentar links en Bbliograf铆a (28-Mayo)
-  Cata --> Justificaci贸n de c贸digo ()
-       --> Documentar pasos c贸digo y finales (Jueves 28)
-       --> Conectar arduino y pagina
-       -->Testear en sala (1 semana de junio)
+pendnete:anotar pasos
+pendiente: 
         
