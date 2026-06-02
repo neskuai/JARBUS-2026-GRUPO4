@@ -136,14 +136,16 @@ sudo ip link set wlan0 up:prende
   - Contabilizando macs
   - loop de contabilización y transmición de datos contable en una variable
   - mostrar en pantalla* 
-  - sitio web
-</details>
+  - sitio we
 
-<details>
-  <summary><b>Frontend </b></summary>
- 
-</details>  
+Formacion de sitito web
+---
+Esto se hizo desde windows
 
+1. instalar python
+4. instalar flacks: [aqui]()
+3. instalr ngrok
+2. onstalar visual studio code
 ---
 
 ## 📅 Cronograma de trabajo
