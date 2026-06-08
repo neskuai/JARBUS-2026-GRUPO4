@@ -143,9 +143,10 @@ Formacion de sitito web
 Esto se hizo desde windows
 
 1. instalar python
-4. instalar flacks: [aqui]()
-3. instalr ngrok
-2. onstalar visual studio code
+2. instalar flacks: Es una bibloteca de python, se usó para crear una aplicación web. Solo sirve para pruebas y desarrollo local. [aqui](https://flask-palletsprojects-com.translate.goog/en/stable/installation/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)
+3. instalar ngrok: Se utilizó para crear un túnel seguro entre una dirección pública de Internet {flacks} y tu servidor de desarrollo local [aquí](https://ngrok.com/download/windows)
+4. instalar visual studio code
+5. diseñar la aplicacion web
 ---
 
 ## 📅 Cronograma de trabajo
