@@ -126,6 +126,38 @@ nano nombredelarchivo.py
 ```
 codigo en mantenimiento la cuestion aaa
 ```
+---
+EXTRA PASOS POR REDACTAR BN
+previo:
+
+ya instalado todo, comencemos con la creación del código. 
+
+¿Qué es lo que haremos? 
+Para capturar los dispositivos a nuestro alrededor, ocuparemos una función de scapy llamada sniff()
+
+De esta forma, detectaremos TODO dispositivo a nuestro alrededor, sin embargo, recordando el contexto en el que estará nuestro proyecto, este estará en constante movimiento, por lo que los dispositivos cercanos (ya sean dispositivos móviles, tablets o computadoras) buscarán continuamente conectarse alguna red wifi.
+
+Para que el Arduino realice bien su tarea y su conteo, el dispositivo debe tener al menos uno de los siguientes requisitos para poder ser capturado:
+
+1. Tener la ubicación activada
+2. Tener la opcion de Wi-Fi encendido, pero sin conectarse a ninguna red.
+
+----
+Los dispositivos mandan un paquete especial llamado Dot11ProbeRq.Con esto filtraremos una cantidad astronomica de informacion que el dispositivo manda continuamente, y solo nos concentraremos en el paquete que tiene la capa de busqueda de wifi.
+Otra cosa que utilizaremos desde scapy es *RadioTap*. El Wi-fi no se puede delimitar, pero si podemos filtrarlo con la porencia de su señal. En este caso, como prueba, ser a de -50 dBm, que sera alrededor de 2 metros (normalmente el arduino podria leer hasta 15 o 30 metrods)(normalmente las targetas red integradas en chips embebidos de qualcomm transmiten y reciben una potencia entre 15dBm y 20dBm)
+informacion scada:
+
+Finalmente teniendo esto en claro, empecemos en la estructura
+
+---
+
+```
+import requests
+from scapy.all import sniff, Dot11ProbeReq, RadioTap
+
+```
+eso
+---
 **3. Entrar a modo monitor:** Entrar a modo monitor: Permite que la antena del Arduino actúe como un radar, capturando las direcciones MAC de dispositivos cercanos aunque no se conecten a la red.
 * 
   - entrar modo monitor,
@@ -133,10 +165,7 @@ sudo ip link set wlan0 down: se apaga
 sudo iw dev wlan0 set type monitor:inicia
 sudo ip link set wlan0 up:prende
 
-  - Contabilizando macs
-  - loop de contabilización y transmición de datos contable en una variable
-  - mostrar en pantalla* 
-  - sitio we
+
 
 Formacion de sitito web
 ---
