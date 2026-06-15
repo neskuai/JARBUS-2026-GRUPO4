@@ -1,4 +1,4 @@
-#codigo para detectar las mac (wifi sniffing)
+# -*- coding: utf-8 -*-
 import subprocess
 import re
 import time
@@ -9,7 +9,7 @@ def reiniciar_interfaz():
     subprocess.run(["sudo", "ip", "link", "set", "wlan0", "up"])
 
 def escanear():
-    print("\n--- RADAR JARBUS: FILTRANDO POR DISTANCIA (RSSI) ---")
+    print("\n---JARBUS---")
     try:
         cmd = ["sudo", "iw", "dev", "wlan0", "scan"]
         raw = subprocess.run(cmd, capture_output=True, text=True, check=True).stdout
@@ -37,7 +37,7 @@ def escanear():
 
         lista_final = sorted(list(dispositivos_cercanos))
 
-        print(f"Pasajeros estimados a bordo (Rango ~5m): {len(lista_final)}")
+        print(f"Pasajeros ESTIMADOS:(Rango ~5m): {len(lista_final)}")
         for i, base in enumerate(lista_final, start=1):
             print(f"[{i}] Dispositivo Cercano: {base}:XX")
 
