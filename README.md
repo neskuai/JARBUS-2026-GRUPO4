@@ -172,10 +172,19 @@ Formacion de sitito web
 Esto se hizo desde windows
 
 1. instalar python
-2. instalar flacks: Es una bibloteca de python, se usó para crear una aplicación web. Solo sirve para pruebas y desarrollo local. [aqui](https://flask-palletsprojects-com.translate.goog/en/stable/installation/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)
-3. instalar ngrok: Se utilizó para crear un túnel seguro entre una dirección pública de Internet {flacks} y tu servidor de desarrollo local [aquí](https://ngrok.com/download/windows)
-4. instalar visual studio code (vincular flask y ngrok)
-5. diseñar la aplicacion web
+2. instalar flacks: Es una bibloteca de python, se usó para crear una aplicación web. Solo sirve para pruebas y desarrollo local. [aqui](https://flask-palletsprojects-com.translate.goog/en/stable/installation/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)>Código de instalación >biblioteca Flask para Windows (HTML) 
+> mkdir myproject 
+> cd myproject 
+> py -3 -m venv .venv 
+>Código de activation de biblioteca flask (HTLM) 
+> .venv\Scripts\activate 
+4. instalar ngrok: Se utilizó para crear un túnel seguro entre una dirección pública de Internet {flacks} y tu servidor de desarrollo local [aquí](https://ngrok.com/download/windows)
+> Instala el agente ngrok (en este caso, tineda microsoft)
+> Añade tu token de autenticación
+> Obtén una URL pública para tu aplicación.
+5. instalar visual studio code (vincular flask y ngrok). [aquí] (https://code-visualstudio-com.translate.goog/docs/setup/windows?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)
+> 
+6. diseñar la aplicacion web
 ---
 
 ## 📅 Cronograma de trabajo
