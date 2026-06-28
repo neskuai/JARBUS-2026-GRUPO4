@@ -203,7 +203,7 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
  ```
 
-7. instalar visual studio code y crear un entorno virtual con las biblotecas flask y ngrok, de esa manera se es más facil hacer los codigs. [aquí](https://code.visualstudio.com/download?_exp_download=d53503e735)
+7. instalar visual studio code y crear un entorno virtual con las biblotecas flask y ngrok, de esa manera se es más facil hacer los codigos. [aquí](https://code.visualstudio.com/download?_exp_download=d53503e735)
 
 8. diseñar la aplicacion web.
 
