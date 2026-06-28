@@ -16,7 +16,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* 鈥
 | Nombre y Apellido | Usuario GitHub | Correo USM               | Rol USM      |
 | ----------------- | -------------- | ------------------------ | ------------ |
 |Catalina Valenzuela| @tupicat       | cvalenzuelare@usm.cl     | 202630012-9  |
-|Roc铆o Lopez        | @neskuai       | rlopezvi@usm.cl          | 202630030-7  |
+|Roc铆o L贸pez        | @neskuai       | rlopezvi@usm.cl          | 202630030-7  |
 
 ## 馃摑 Descripci贸n breve del proyecto
 
@@ -68,7 +68,7 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* 鈥
 ---
 ## 馃殌Pasos de instalaci贸n y uso 
 
-**Previamente, el Arduino Uno Q debe estar conectado con la computadora. Existen varias formas de conectarlo, sin embargo, en este caso usaremos un cable USB-C y *ADB tools*. Para m谩s informaci贸n haga click [aqu铆](https://docs.arduino.cc/tutorials/uno-q/debian-guide/#accessing-the-board-shell).**
+**Previamente, el Arduino Uno Q debe estar conectado con la computadora. Existen varias formas de conectarlo, sin embargo, en este caso usaremos un cable USB-C y *ADB tools*. Para m谩s informaci贸n haga cl铆c [aqu铆](https://docs.arduino.cc/tutorials/uno-q/debian-guide/#accessing-the-board-shell).**
 
 **1. Instalar herramienta ADB (Android Debug Bridge):** Nos permitir谩 establecer comunicaci贸n directa  entre tu computador y el Arduino UNO Q.
 
@@ -104,7 +104,7 @@ nano nombredelarchivo.py
 (se da a entender que "nombre del archivo" es el nombre que le dar谩s al archivo, mientras que ".py" es el formato del archivo que, en este caso, es *py*thon.)
 * Ya dentro de nano, copia el c贸digo desde el archivo #codigoscan.py
 
-* Una vez hecho, hecha a correr el c贸digo con el siguiente comando
+* Una vez hecho, ejecuta el script con el siguiente comando
 
 ```
 sudo python3 codigoscan.py
