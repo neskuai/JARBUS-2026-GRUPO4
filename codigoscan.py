@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import subprocess
 import re
 import time
@@ -28,10 +27,8 @@ def escanear():
                 mac = mac_match.group(1)
                 nivel_senal = float(signal_match.group(1))
 
-                # --- FILTRO DE DISTANCIA CRUCIAL ---
-                # Modifica este numero si quieres mas o menos rango:
-                # -60 dBm es muy cerca (3-4 metros). -68 dBm es toda la micro entera.
-                if nivel_senal >= -68.0:
+                
+                if nivel_senal >= -68.0: #filtra las direcciones mac para solo captar desde -68 dBm 
                     base_mac = ":".join(mac.split(":")[:5]).lower()
                     dispositivos_cercanos.add(base_mac)
 
