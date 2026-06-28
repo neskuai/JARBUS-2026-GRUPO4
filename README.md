@@ -171,20 +171,42 @@ Formacion de sitito web
 ---
 Esto se hizo desde windows
 
-1. instalar python
-2. instalar flacks: Es una bibloteca de python, se usó para crear una aplicación web. Solo sirve para pruebas y desarrollo local. [aqui](https://flask-palletsprojects-com.translate.goog/en/stable/installation/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)>Código de instalación >biblioteca Flask para Windows (HTML) 
+1. instalar python. [aqui](https://www.python.org/downloads/)
+2. instalar flacks: Es una bibloteca de python, se usó para crear una aplicación web. Solo sirve para pruebas y desarrollo local. [aqui](https://flask-palletsprojects-com.translate.goog/en/stable/installation/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)
+>Código de instalación >biblioteca Flask para Windows
+```
 > mkdir myproject 
 > cd myproject 
-> py -3 -m venv .venv 
->Código de activation de biblioteca flask (HTLM) 
-> .venv\Scripts\activate 
-4. instalar ngrok: Se utilizó para crear un túnel seguro entre una dirección pública de Internet {flacks} y tu servidor de desarrollo local [aquí](https://ngrok.com/download/windows)
+> py -3 -m venv .venv
+
+```
+Código de activation de biblioteca flask (HTLM) 
+```
+> .venv\Scripts\activate
+```
+4. instalar ngrok: Se utilizó para crear un túnel seguro entre una dirección pública de Internet {flacks} y tu servidor de desarrollo local. [aquí](https://ngrok.com/download/windows)
+
 > Instala el agente ngrok (en este caso, tineda microsoft)
 > Añade tu token de autenticación
 > Obtén una URL pública para tu aplicación.
-5. instalar visual studio code (vincular flask y ngrok). [aquí] (https://code-visualstudio-com.translate.goog/docs/setup/windows?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)
-> 
-6. diseñar la aplicacion web
+
+5. fucionar flask y ngrok para que solo entrege un URL.
+ ```
+if __name__ == "__main__":
+     1. Python le ordena a la librería conectar el puerto 5000
+    tunnel = ngrok.connect(5000)
+    
+     2. Imprime en tu pantalla la URL pública generada por los servidores de ngrok
+    print(f" Enlace público: {tunnel.public_url}")
+    
+     3. Inmediatamente después, enciende el servidor web de Flask
+    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+ ```
+
+7. instalar visual studio code y crear un entorno virtual con las biblotecas flask y ngrok, de esa manera se es más facil hacer los codigs. [aquí](https://code.visualstudio.com/download?_exp_download=d53503e735)
+
+8. diseñar la aplicacion web.
+
 ---
 
 ## 📅 Cronograma de trabajo
