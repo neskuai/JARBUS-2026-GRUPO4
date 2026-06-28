@@ -110,14 +110,15 @@ nano nombredelarchivo.py
 sudo python3 codigoscan.py
 ```
 ---
+### 📊 ¿Cómo funciona nuestro escaneo?
+El script utiliza el comando nativo de Linux `iw dev wlan0 scan` a través de la librería `subprocess` de Python. Este comando realiza un escaneo de los bloques de servicio inalámbrico (**BSS**) cercanos.
 
-* ¿Cómo funciona el script? 
-Los dispositivos móviles que tienen el Wi-Fi encendido (o la localización activa) transmiten constantemente ráfagas de paquetes llamados Dot11ProbeReq (Probe Requests) para descubrir redes disponibles a su alrededor.
-Mediante el script filtramos de forma automática esta información masiva para concentrarnos únicamente en las solicitudes de búsqueda Wi-Fi. Adicionalmente, implementamos la capa RadioTap para evaluar la potencia de la señal recibida (RSSI) en dBm. Definimos un umbral experimental inicial de -50 dBm (aproximadamente un radio de 2 metros) para evitar el conteo de dispositivos fuera del perímetro del vehículo.
+Mediante expresiones regulares (**Regex** con la librería `re`), el script filtra el texto plano devuelto por el sistema operativo, buscando los patrones de direcciones MAC y sus niveles de potencia de señal (**RSSI**) medidos en **dBm**. 
 
+* **Filtrado por potencia:** Definimos un umbral experimental en el código de **-68.0 dBm** (aproximadamente un radio de 5 metros) para estimar únicamente los dispositivos que se encuentran a bordo o extremadamente cerca del perímetro del bus, ignorando redes lejanas.
 ---
 
-Formación de sitio web
+### 📺 Formación de sitio web
 ---
 Esto se hizo desde windows
 
