@@ -5,8 +5,11 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 ## 🗂️ Estructura del repositorio
 
 ```
-/PROY-2026-GRUPOX
+/JARBUS
 │
+├── codigoscan.py         # Script principal de escaneo Wi-Fi para el Arduino
+├── codigositiowebapp.py  # Servidor web local y backend en Flask para el sitio web
+└── README.md             # Documentación del proyecto (este archivo)
 ```
 ## 👥 Integrantes del grupo
 
@@ -19,20 +22,20 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 > **Jarbus** es un sistema diseñado para el monitoreo de aforo en tiempo real en el transporte público. Utilizando un Arduino Uno Q con Linux integrado, captura señales Wi-Fi (direcciones MAC) de los dispositivos cercanos; estos datos son procesados y visualizados a través de una interfaz web (HTML/CSS) accesible para los usuarios.
 ---
-<details>
- <summary><b>🎯 Objetivos</b></summary>
+
+## 🎯 Objetivos
 
 - Objetivo general:
 
-  - Optimizar la toma de decisiones para los usuarios del transporte.
+  - Optimizar la toma de decisiones para los usuarios del transporte público mediante datos de aforo en tiempo real.
      
 - Objetivos específicos:
 
-  - Configurar Arduino entorno Linux
-  - Establecer umbrales para delimitar el área de conteo   
-  - Diseñar una plataforma de visualización de datos a tiempo real (Sitio web)
-  - Validar el prototipo en un entorno real
-    </details>
+  - ​Configurar el entorno Linux embebido en el Arduino Uno Q.
+  - ​Implementar el algoritmo de escaneo (Wi-Fi Scanning) para capturar tramas de gestión.
+  - ​Establecer umbrales de potencia de señal (dBm) para delimitar el área de conteo dentro del bus.
+  - ​Diseñar una interfaz web dinámica para la visualización de datos en tiempo real.
+  - ​Validar el prototipo en un entorno operacional real.
 ---
 
 ## 🧩 Alcance del proyecto
@@ -54,20 +57,19 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 
 ## 🛠️ Tecnologías y herramientas utilizadas
 
-- Lenguaje de programación:
+- Lenguaje de programación
   - Python
 - Microcontroladores
   - Arduino UNO Q
 - Sensores
-  - Wi-Fi sniffing (Integrado en Arduino Uno Q)
-  - 
+  - Antena integrada de Arduino Uno Q
+- Desarrollo Web
+  - Flask, Ngrok
 ---
 ## 🚀Pasos de instalación y uso 
 
 **Previamente, el Arduino Uno Q debe estar conectado con la computadora. Existen varias formas de conectarlo, sin embargo, en este caso usaremos un cable USB-C y *ADB tools*. Para más información haga click [aquí](https://docs.arduino.cc/tutorials/uno-q/debian-guide/#accessing-the-board-shell).**
 
-<details>
-  <summary><b> Backend </b></summary>
 **1. Instalar herramienta ADB (Android Debug Bridge):** Nos permitirá establecer comunicación directa  entre tu computador y el Arduino UNO Q.
 
   Para usuarios con Linux: 
@@ -94,80 +96,26 @@ para acceder al entorno de la consola de la placa.
 *(Si ninguno de los pasos anteriores funciona, haz click [aquí]([https://docs.arduino.cc/tutorials/uno-q/adb/](https://www.xda-developers.com/install-adb-windows-macos-linux/)). Si aún asi no funciona, te invito a probar con otros métodos.)*
 
 ---
-**2. Instalar biblioteca "Scapy":** Ya ingresado a la terminal del Arduino, debería aparecer algo tal que así
-```
- arduino@uno-q:~$ 
-```
-* Primero, actualizamos el sistema para asegurar la compatibilidad:
-```
-sudo apt update && sudo apt upgrade -y
-```
-(el *-y* sirve para aceptar todas las preguntas de confirmación)
-* Ahora instalaremos scapy. Esta biblioteca será esencial para facilitarnos el trabajo de largas lineas de código.
-```
-sudo apt install python3-scapy -y
-```
-Para verificar la instalación, puedes ejecutar:
-```
-sudo scapy
-```
-* Si al probar el comando entras al modo interactivo de Scapy (verás un símbolo como >>>), simplemente escribe **exit** o presiona **Ctrl + D** para regresar a la terminal del Arduino.
 
-*(Si ninguno de los pasos anteriores funciona, le invito a probar directamente desde el manual, haciendo clíck [aquí](https://www.kali.org/tools/scapy/))*
-
----
-
-4. Creación de código: Para crear y editar el archivo donde estará nuestro código, utilizaremos el editor **nano**. En la misma terminal, ejecuta el siguiente comando.
+2. Creación de código: Para crear y editar el archivo donde estará nuestro código, utilizaremos el editor **nano**. En la misma terminal, ejecuta el siguiente comando.
 ```
 nano nombredelarchivo.py
 ```
 (se da a entender que "nombre del archivo" es el nombre que le darás al archivo, mientras que ".py" es el formato del archivo que, en este caso, es *py*thon.)
-* Ya dentro de nano, copia el siguiente código.
+* Ya dentro de nano, copia el código desde el archivo #codigoscan.py
+
+* Una vez hecho, hecha a correr el código con el siguiente comando
+
 ```
-codigo en mantenimiento la cuestion aaa
+sudo python3 codigoscan.py
 ```
 ---
-EXTRA PASOS POR REDACTAR BN
-previo:
-
-ya instalado todo, comencemos con la creación del código. 
 
 ¿Qué es lo que haremos? 
-Para capturar los dispositivos a nuestro alrededor, ocuparemos una función de scapy llamada sniff()
 
-De esta forma, detectaremos TODO dispositivo a nuestro alrededor, sin embargo, recordando el contexto en el que estará nuestro proyecto, este estará en constante movimiento, por lo que los dispositivos cercanos (ya sean dispositivos móviles, tablets o computadoras) buscarán continuamente conectarse alguna red wifi.
-
-Para que el Arduino realice bien su tarea y su conteo, el dispositivo debe tener al menos uno de los siguientes requisitos para poder ser capturado:
-
-1. Tener la ubicación activada
-2. Tener la opcion de Wi-Fi encendido, pero sin conectarse a ninguna red.
-
-----
-Los dispositivos mandan un paquete especial llamado Dot11ProbeRq.Con esto filtraremos una cantidad astronomica de informacion que el dispositivo manda continuamente, y solo nos concentraremos en el paquete que tiene la capa de busqueda de wifi.
-Otra cosa que utilizaremos desde scapy es *RadioTap*. El Wi-fi no se puede delimitar, pero si podemos filtrarlo con la porencia de su señal. En este caso, como prueba, ser a de -50 dBm, que sera alrededor de 2 metros (normalmente el arduino podria leer hasta 15 o 30 metrods)(normalmente las targetas red integradas en chips embebidos de qualcomm transmiten y reciben una potencia entre 15dBm y 20dBm)
-informacion scada:
-
-Finalmente teniendo esto en claro, empecemos en la estructura
 
 ---
-
-```
-import requests
-from scapy.all import sniff, Dot11ProbeReq, RadioTap
-
-```
-eso
----
-**3. Entrar a modo monitor:** Entrar a modo monitor: Permite que la antena del Arduino actúe como un radar, capturando las direcciones MAC de dispositivos cercanos aunque no se conecten a la red.
-* 
-  - entrar modo monitor,
-sudo ip link set wlan0 down: se apaga
-sudo iw dev wlan0 set type monitor:inicia
-sudo ip link set wlan0 up:prende
-
-
-
-Formacion de sitito web
+Formación de sitio web
 ---
 Esto se hizo desde windows
 
@@ -186,7 +134,7 @@ Código de activation de biblioteca flask (HTLM)
 ```
 4. instalar ngrok: Se utilizó para crear un túnel seguro entre una dirección pública de Internet {flacks} y tu servidor de desarrollo local. [aquí](https://ngrok.com/download/windows)
 
-> Instala el agente ngrok (en este caso, tineda microsoft)
+> Instala el agente ngrok (en este caso, tienda microsoft)
 > Añade tu token de autenticación
 > Obtén una URL pública para tu aplicación.
 
@@ -220,7 +168,4 @@ if __name__ == "__main__":
 [Bibliografía](https://usmcl-my.sharepoint.com/:w:/g/personal/cvalenzuelare_usm_cl/IQDYYMyArTveQaWduHugnukkAVsH1VWSEH6rNh9kpRsD15A?e=cc4g5l)
 
 ---
-## 📌 Notas adicionales
-pendnete:anotar pasos
-pendiente: 
-        
+## 📽️ Video
