@@ -111,10 +111,12 @@ sudo python3 codigoscan.py
 ```
 ---
 
-¿Qué es lo que haremos? 
-
+* ¿Cómo funciona el script? 
+Los dispositivos móviles que tienen el Wi-Fi encendido (o la localización activa) transmiten constantemente ráfagas de paquetes llamados Dot11ProbeReq (Probe Requests) para descubrir redes disponibles a su alrededor.
+Mediante el script filtramos de forma automática esta información masiva para concentrarnos únicamente en las solicitudes de búsqueda Wi-Fi. Adicionalmente, implementamos la capa RadioTap para evaluar la potencia de la señal recibida (RSSI) en dBm. Definimos un umbral experimental inicial de -50 dBm (aproximadamente un radio de 2 metros) para evitar el conteo de dispositivos fuera del perímetro del vehículo.
 
 ---
+
 Formación de sitio web
 ---
 Esto se hizo desde windows
