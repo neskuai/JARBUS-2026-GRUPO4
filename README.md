@@ -3,13 +3,13 @@
 Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* – 2026.
 
 ## 🗂️ Estructura del repositorio
-
 ```
 /JARBUS
 │
-├──README.md             # Documentación del proyecto (este archivo)
-├── codigoscan.py         # Script principal de escaneo Wi-Fi para el Arduino
-└── codigositiowebapp.py  # Servidor web local y backend en Flask para el sitio web
+├── README.md
+├── /src
+│   ├── codigoscan.py
+│   └── codigositiowebapp.py
 ```
 ## 👥 Integrantes del grupo
 
