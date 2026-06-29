@@ -7,9 +7,9 @@ Repositorio del grupo 4 para el proyecto del ramo *Proyecto Inicial (IWG400)* �
 ```
 /JARBUS
 │
+├──README.md             # Documentación del proyecto (este archivo)
 ├── codigoscan.py         # Script principal de escaneo Wi-Fi para el Arduino
-├── codigositiowebapp.py  # Servidor web local y backend en Flask para el sitio web
-└── README.md             # Documentación del proyecto (este archivo)
+└── codigositiowebapp.py  # Servidor web local y backend en Flask para el sitio web
 ```
 ## 👥 Integrantes del grupo
 
